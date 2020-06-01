@@ -1,3 +1,3 @@
 # Screenshot
 <br>
-![ScreenShot](https://raw.github.com/oscar503sv/flask-sqlite-todoapp/master/docs/Screenshot.PNG)
+![ScreenShot](https://raw.githubusercontent.com/oscar503sv/flask-sqlite-todoapp/master/docs/Screenshot.PNG)
