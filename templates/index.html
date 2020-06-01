@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Oztazk App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  </head>
+  <body>
+    <main class="container p-4">
+      <h1 class="display-4 text-center mt-4 title">Oztazk App</h1>
+      <div class="row">
+        <div class="col-md-4 offset-md-4 my-auto">
+          <div class="card">
+            <div class="card-header">
+              <form action="/create-task" method="POST">
+                <div class="form-group">
+                  <input type="text" name="content" placeholder="Nueva tarea" class="form-control" autofocus/>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  Añadir tarea
+                </button>
+              </form>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                {% for task in tasks %}
+                <li class="list-group-item">
+                  <span class="{% if task.done %} done {% endif %}">{{ task.content }}</span>
+                  <a
+                    href="/done/{{ task.id }}"
+                    class="btn btn-success btn-do"
+                    >Hecho</a>
+                  <a
+                    href="/delete/{{ task.id }}"
+                    class="btn btn-danger btn-delete"
+                    >Borrar</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="page-footer font-small cyan darken-3">
+        <div class="container col-md-4 offset-md-4 my-auto p-4">
+            <div id="element-footer" class="row text-center ml-5 mr-4">
+                <!-- Twitter -->
+                <a href="https://twitter.com/OzkarHdz_" class="tw-ic">
+                    <i class="fab fa-twitter fa-lg white-text mr-md-5 fa-2x"> </i>
+                </a>
+                <!--Github-->
+                <a href="https://github.com/oscar503sv" class="gh-ic">
+                    <i class="fab fa-github fa-lg white-text mr-md-5 fa-2x"></i>
+                </a>
+                <!--Linkedin -->
+                <a href="https://www.linkedin.com/in/oscar-hernandez-2a6a021a8/" class="li-ic">
+                    <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 fa-2x"> </i>
+                </a>
+            </div>
+                <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                    <a href="https://github.com/oscar503sv">Oscar Hernández</a>
+                </div>
+        </div><!--Fin container-->
+    </div><!--Fin footer-->
+    </main>
+  </body>
+</html>

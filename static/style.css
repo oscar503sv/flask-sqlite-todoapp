@@ -1,0 +1,51 @@
+body {
+  background: #8360c3; /* fallback for old browsers */
+  color: black;
+  background: -webkit-linear-gradient(
+    to right,
+    #2ebf91,
+    #8360c3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2ebf91,
+    #8360c3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.title {
+  font-family: "Lobster", cursive;
+}
+
+.done{
+  text-decoration: line-through;
+  color: #cfcfcf;
+}
+
+.btn-delete{
+  display: -webkit-inline-box;
+  line-height: 0;
+  border-radius: 25px;
+  margin: 0px auto;
+  padding-left: 10px;
+  width: 68px;
+  height: 20px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.btn-do{
+  display: -webkit-inline-box;
+  line-height: 0;
+  border-radius: 25px;
+  margin: 0px auto;
+  padding-left: 14px;
+  width: 68px;
+  height: 20px;
+  font-size: 10px;
+  text-align: center;
+}
+
+#element-footer{
+  margin-left: 4rem !important;
+}
